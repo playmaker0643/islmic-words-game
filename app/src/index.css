@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 0.625rem;
+  --background: 0 0% 100%;
+  --foreground: 0 0% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 3.9%;
+  --primary: 145 63% 29%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 145 30% 96%;
+  --secondary-foreground: 145 63% 29%;
+  --muted: 145 20% 96%;
+  --muted-foreground: 0 0% 45%;
+  --accent: 43 74% 49%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 145 20% 90%;
+  --input: 145 20% 90%;
+  --ring: 145 63% 29%;
+  --chart-1: 145 63% 29%;
+  --chart-2: 43 74% 49%;
+  --chart-3: 180 50% 40%;
+  --chart-4: 30 60% 50%;
+  --chart-5: 0 60% 50%;
+}
+
+.dark {
+  --background: 145 30% 8%;
+  --foreground: 0 0% 95%;
+  --card: 145 25% 10%;
+  --card-foreground: 0 0% 95%;
+  --popover: 145 25% 10%;
+  --popover-foreground: 0 0% 95%;
+  --primary: 145 63% 40%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 145 20% 15%;
+  --secondary-foreground: 0 0% 95%;
+  --muted: 145 20% 15%;
+  --muted-foreground: 0 0% 60%;
+  --accent: 43 74% 49%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 145 20% 20%;
+  --input: 145 20% 20%;
+  --ring: 145 63% 40%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Islamic Pattern Background */
+.islamic-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, hsl(145 63% 29% / 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, hsl(43 74% 49% / 0.05) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L37.5 7.5L45 0L52.5 7.5L60 0V15L52.5 22.5L60 30L52.5 37.5L60 45V60L52.5 52.5L45 60L37.5 52.5L30 60L22.5 52.5L15 60L7.5 52.5L0 60V45L7.5 37.5L0 30L7.5 22.5L0 15V0L7.5 7.5L15 0L22.5 7.5L30 0Z' fill='none' stroke='hsl(145 63% 29% / 0.08)' stroke-width='0.5'/%3E%3C/svg%3E");
+}
+
+/* Gold Gradient Text */
+.gold-text {
+  background: linear-gradient(135deg, #D4AF37 0%, #F4E4BA 50%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Green Gradient */
+.green-gradient {
+  background: linear-gradient(135deg, hsl(145 63% 29%) 0%, hsl(145 50% 40%) 100%);
+}
+
+/* Card Glow Effect */
+.card-glow {
+  box-shadow: 0 0 30px hsl(145 63% 29% / 0.15), 0 0 60px hsl(43 74% 49% / 0.1);
+}
+
+/* Letter Tile Animation */
+@keyframes letterPop {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.letter-pop {
+  animation: letterPop 0.3s ease-out forwards;
+}
+
+/* Success Animation */
+@keyframes successPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.success-pulse {
+  animation: successPulse 0.5s ease-in-out;
+}
+
+/* Shake Animation for wrong answer */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-10px); }
+  80% { transform: translateX(10px); }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Progress Bar Animation */
+@keyframes progressFill {
+  from { width: 0%; }
+}
+
+.progress-fill {
+  animation: progressFill 0.5s ease-out forwards;
+}
+
+/* Star Twinkle */
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.twinkle {
+  animation: twinkle 1.5s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(145 30% 96%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(145 63% 29% / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(145 63% 29% / 0.5);
+}
